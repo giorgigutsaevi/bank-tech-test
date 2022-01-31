@@ -23,8 +23,13 @@ describe("BankOperation", () => {
 	describe("::display", () => {
 		it("displays the date of the operation as the first column", () => {
 			expect(subject.display()).toEqual("1-1-2022 ||  ||  || ")
-			
 		})
+
+		it("displays the credit amount of the operation as the second column", () => {
+			let creditOperation = new BankOperation({credit: 500})
+			expect(creditOperation.display()).toEqual("1-1-2022 || 500 ||  || ")
+		})
+		
 	})
 
 
