@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/giorgigutsaevi/bank-tech-test#readme",
   "dependencies": {
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "timekeeper": "^2.2.0"
   }
 }
