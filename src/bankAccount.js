@@ -18,6 +18,10 @@ class BankAccount{
 		}
 	}
 
+	showBalance(){
+		return this.balance;
+	}
+
 }
 
 module.exports = BankAccount;

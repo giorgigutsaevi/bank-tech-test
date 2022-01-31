@@ -52,6 +52,18 @@ describe("BankAccount", ()=>{
 		})
 	})
 
+	describe("::showBalance", ()=>{
+
+		it("has a showBalance() instance method", ()=>{
+			expect(typeof subject.showBalance).toBe("function")
+		})
+
+		it("displays the current balance on the account", ()=>{
+			subject.deposit(200);
+			expect(subject.showBalance()).toEqual(200)
+		})
+	})
+
 	
 
 })
