@@ -91,10 +91,12 @@ describe("BankAccount", ()=>{
 			expect(stubClass.stubFunction).toHaveBeenCalledTimes(2);
 			expect(newUser.operationsArray.length).toEqual(2);
 		})
+	})
 
-	
-
-
+	describe("::printStatement", ()=>{
+		it("has an printStatement() instance method", ()=>{
+			expect(typeof subject.printStatement).toBe("function")
+		})
 	})
 
 	

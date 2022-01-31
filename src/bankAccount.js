@@ -32,6 +32,10 @@ class BankAccount{
 		this.operationsArray.unshift(operation)
 	}
 
+	printStatement(){
+		
+	}
+
 
 }
 module.exports = BankAccount;

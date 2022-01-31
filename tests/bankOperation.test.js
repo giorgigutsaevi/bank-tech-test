@@ -22,22 +22,22 @@ describe("BankOperation", () => {
 
 	describe("::display", () => {
 		it("displays the date of the operation as the first column", () => {
-			expect(subject.display()).toEqual("1-1-2022 ||  ||  || ")
+			expect(subject.display()).toEqual("1/1/2022 ||  ||  || ")
 		})
 
 		it("displays the credit amount of the operation as the second column", () => {
 			let creditOperation = new BankOperation({credit: 500})
-			expect(creditOperation.display()).toEqual("1-1-2022 || 500 ||  || ")
+			expect(creditOperation.display()).toEqual("1/1/2022 || 500 ||  || ")
 		})
 
 		it("displays the debit amount of the operation as the third column", () => {
 			let debitOperation = new BankOperation({debit: 150})
-			expect(debitOperation.display()).toEqual("1-1-2022 ||  || 150 || ")
+			expect(debitOperation.display()).toEqual("1/1/2022 ||  || 150 || ")
 		})
 
 		it("displays the the balance as the last column", () => {
 			let balance = new BankOperation({balance: 1000})
-			expect(balance.display()).toEqual("1-1-2022 ||  ||  || 1000")
+			expect(balance.display()).toEqual("1/1/2022 ||  ||  || 1000")
 		})
 		
 	})
