@@ -1,8 +1,11 @@
+const BankOperation = require("./bankOperation");
 
 class BankAccount{
 
-	constructor(){
-		this.balance = 0;
+	constructor(operation = BankOperation){
+		const STARTING_BALANCE = 0;
+		this.balance = STARTING_BALANCE;
+		this.operationsArray = [];
 	}
 
 	deposit(amount){
@@ -21,6 +24,11 @@ class BankAccount{
 	showBalance(){
 		return this.balance;
 	}
+
+	addOperation(obj){
+		
+	}
+
 
 }
 

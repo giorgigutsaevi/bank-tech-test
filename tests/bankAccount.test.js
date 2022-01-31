@@ -64,6 +64,15 @@ describe("BankAccount", ()=>{
 		})
 	})
 
+	describe("::addOperation", ()=>{
+
+		it("has a addOperation() instance method", ()=>{
+			expect(typeof subject.addOperation).toBe("function")
+		})
+
+	
+	})
+
 	
 
 })
