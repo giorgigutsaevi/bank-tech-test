@@ -65,12 +65,36 @@ describe("BankAccount", ()=>{
 	})
 
 	describe("::addOperation", ()=>{
+		let stubClass;
+		let newUser;
 
-		it("has a addOperation() instance method", ()=>{
+		beforeEach(()=>{
+			stubClass = {
+				stubFunction: () => {}
+			};
+			jest.spyOn(stubClass, "stubFunction")
+			newUser = new BankAccount(stubClass.stubFunction)
+		})
+
+		it("has an addOperation() instance method", ()=>{
 			expect(typeof subject.addOperation).toBe("function")
 		})
 
+		it("uses BankOperation class when invoked", ()=>{
+			newUser.addOperation({credit: 300})
+			expect(stubClass.stubFunction).toHaveBeenCalled();
+		})
+
+		it("deposit() and withdraw() methods also BankOperation", ()=>{
+			newUser.deposit(200);
+			newUser.withdraw(100);
+			expect(stubClass.stubFunction).toHaveBeenCalledTimes(2);
+			expect(newUser.operationsArray.length).toEqual(2);
+		})
+
 	
+
+
 	})
 
 	
