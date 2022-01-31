@@ -1,0 +1,26 @@
+{
+  "name": "bank-tech-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giorgigutsaevi/bank-tech-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giorgigutsaevi/bank-tech-test/issues"
+  },
+  "homepage": "https://github.com/giorgigutsaevi/bank-tech-test#readme",
+  "dependencies": {
+    "jest": "^27.4.7"
+  }
+}
