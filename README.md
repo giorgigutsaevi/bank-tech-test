@@ -30,4 +30,5 @@ date || credit || debit || balance
 4. Set up the account and use all the methods on its interface
 
 ## Screenshot
+![Screenshot 2022-02-01 at 11 06 06](https://user-images.githubusercontent.com/74352720/151958184-e23696ea-fd38-4c3c-a751-3ea41946ff4b.png)
 
