@@ -8,7 +8,7 @@ class BankOperation {
 
   display() {
     return [
-      `${this.date.getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`,
+      `${this.date.getDate()}/${this.date.getMonth() + 1}/${this.date.getFullYear()}`,
       this.credit,
       this.debit,
       this.balance,

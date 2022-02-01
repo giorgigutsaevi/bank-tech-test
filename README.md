@@ -32,3 +32,14 @@ date || credit || debit || balance
 ## Screenshot
 ![Screenshot 2022-02-01 at 11 06 06](https://user-images.githubusercontent.com/74352720/151958184-e23696ea-fd38-4c3c-a751-3ea41946ff4b.png)
 
+## My Approach 
+### General Code Structure & how it works
+There are 2 classes that work together:
+1. BankAccount class, which takes care of setting up the user's bank account, depositing & withdrawing the money and also printing the summary statement as well as other helper methods. 
+2. BankOperation class, acts as a collector of all operations/transactions a user can make. On instatiation the constructor method creates an object (hash) (using the ES6 destructuring syntax for that, and starts with a current date key-value relationship and 'empty' object keys for credit, debit and balance). 
+
+I mentioned that BankAccount model is injected with BankOperation class, so it's important to understand the relationship between them in more detail.
+
+Everytime `deposit` and `withdraw` methods are invoked, they in turn invoke the `addOperation` helper method, that takes an object as an argument. The `addOperation` method assigns an instance of `BankOperation` class to a variable `operation` which captures the operation (whether it's a deposit or a withdrawal) and automatically adds it to the `operationsArray` - an array that holds the history of all transactions/operations. 
+
+Then, if the user wants to print their statement, they can invoke the `printStatement` method, that maps the operationsArray and since this array is now populated with instances of `BankOperation` class it uses the `display` method on them. In the end the `printStatement` method conveniently joins the strings with a newline symbol, so it appears well-organized. 
