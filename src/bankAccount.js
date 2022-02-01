@@ -13,6 +13,7 @@ class BankAccount{
 	deposit(amount){
 		this.balance += amount;
 		this.addOperation({credit: amount, balance: this.balance});
+		return `${amount} is now deposited to your account!`
 	}
 
 	withdraw(amount){
@@ -21,6 +22,7 @@ class BankAccount{
 		}else{
 			this.balance -= amount;
 			this.addOperation({debit: amount, balance: this.balance});
+			return `${amount} is now withdrawn from your account!`
 		}
 	}
 
