@@ -1,11 +1,16 @@
-
 const BankAccount = require("../src/bankAccount");
+const BankOperation = require("../src/bankOperation");
+
+// mocking the bankOperation class with all of its methods
+jest.mock("../src/bankOperation")
 
 describe("BankAccount", ()=>{
 	let subject;
 
 	beforeEach(()=>{
 		subject = new BankAccount();
+		// Clear all instancews and calls to constructor and all methods
+		BankOperation.mockClear();
 	})
 
 	it("creates an instance of itself", ()=>{
@@ -94,11 +99,17 @@ describe("BankAccount", ()=>{
 	})
 
 	describe("::printStatement", ()=>{
-		it("has an printStatement() instance method", ()=>{
+		it("has a printStatement() instance method", ()=>{
 			expect(typeof subject.printStatement).toBe("function")
+		});
+
+		it("printStatement() calls display() method from BankOperation model", ()=>{
+			let user = new BankAccount();
+			user.deposit(1000);
+			user.withdraw(200);
+			user.printStatement();
+			expect(BankOperation).toHaveBeenCalled()
 		})
 	})
-
-	
 
 })

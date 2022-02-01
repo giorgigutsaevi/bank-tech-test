@@ -7,6 +7,7 @@ class BankAccount{
 		this.balance = STARTING_BALANCE;
 		this.operationsArray = [];
 		this.bankOperation = bankOperation;
+		this.STATEMENT_HEADER = "date || credit || debit || balance\n"
 	}
 
 	deposit(amount){
@@ -33,9 +34,10 @@ class BankAccount{
 	}
 
 	printStatement(){
-		
+		let statements = this.operationsArray.map(statement => statement.display())
+		console.log(`${this.STATEMENT_HEADER}${statements.join("\n")}`);
 	}
 
-
 }
+
 module.exports = BankAccount;
